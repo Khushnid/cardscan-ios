@@ -21,11 +21,7 @@ struct AppInfoUtils {
     }
 
     static func getLibraryPackageName() -> String? {
-        if #available(iOS 11.2, *) {
-            return CSBundle.bundleIdentifier
-        } else {
-            return nil
-        }
+        return CSBundle.bundleIdentifier
     }
     
     static func getSdkVersion() -> String {

@@ -9,9 +9,7 @@
 import Foundation
 import CoreML
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
 public struct Api {
-    
     public struct ApiError: Error {
         var message: String
         var code: String

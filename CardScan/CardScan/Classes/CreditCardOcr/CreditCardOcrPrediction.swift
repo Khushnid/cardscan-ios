@@ -8,7 +8,7 @@
 import CoreGraphics
 import Foundation
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
+
 public struct UxFrameConfidenceValues {
     public let hasOcr: Bool
     public let uxPan: Double
@@ -27,7 +27,7 @@ public struct UxFrameConfidenceValues {
     }
 }
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
+
 public enum CenteredCardState {
     case numberSide
     case nonNumberSide
@@ -38,7 +38,7 @@ public enum CenteredCardState {
     }
 }
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
+
 public struct CreditCardOcrPrediction {
     public let image: CGImage
     public let ocrCroppingRectangle: CGRect

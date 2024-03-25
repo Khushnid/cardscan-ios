@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Frame 1321314503.png",
       "idiom" : "universal",
-      "filename" : "flashlight.png",
       "scale" : "1x"
     },
     {
+      "filename" : "Frame 1321314503@2x.png",
       "idiom" : "universal",
-      "filename" : "flashlight@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "Frame 1321314503@3x.png",
       "idiom" : "universal",
-      "filename" : "flashlight@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

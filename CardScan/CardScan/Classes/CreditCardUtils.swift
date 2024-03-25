@@ -1,6 +1,6 @@
 import Foundation
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
+
 public struct CreditCardUtils {
     static let maxCvvLength = 3
     static let maxCvvLengthAmex = 4
@@ -20,6 +20,9 @@ public struct CreditCardUtils {
                                      "67"]
     private static let prefixesUnionPay = ["62"]
     private static let prefixesVisa = ["4"]
+    private static let prefixesTransportCard = ["99", "9987"]
+    private static let prefixesUzCard = ["8600","56","5614","86", "6262", "62"]
+    private static let prefixesHumoCard = ["98", "9860"]
 
     public static var prefixesRegional: [String] = []
     
@@ -260,6 +263,12 @@ public struct CreditCardUtils {
             return CardNetwork.UNIONPAY
         case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesRegional):
             return CardNetwork.REGIONAL
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesTransportCard):
+            return CardNetwork.TRANSPORT
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesUzCard):
+            return CardNetwork.UZCARDS
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesHumoCard):
+            return CardNetwork.HUMOCARD
         default:
             return CardNetwork.UNKNOWN
         }
@@ -389,7 +398,7 @@ public struct CreditCardUtils {
 }
 
 //TODO: Added extension to make older network changes available, will remove in future version
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
+
 extension CreditCardUtils {
     public static func isVisa(number: String) -> Bool {
         return determineCardNetwork(cardNumber: number) == CardNetwork.VISA

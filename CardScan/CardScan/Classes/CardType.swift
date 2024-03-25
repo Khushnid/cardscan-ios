@@ -6,8 +6,8 @@
 //
 
 import Foundation
+ 
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
 @objc public enum CardType: Int {
     case CREDIT
     case DEBIT
