@@ -1,12 +1,5 @@
-//
-//  InterfaceOrientation.swift
-//  CardScan
-//
-//  Created by Jaime Park on 4/23/20.
-//
 import UIKit
 import AVFoundation
-
 
 extension UIWindow {
     static var interfaceOrientation: UIInterfaceOrientation {

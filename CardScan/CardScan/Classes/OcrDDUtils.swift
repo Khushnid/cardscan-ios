@@ -1,12 +1,4 @@
-//
-//  OcrDDUtils.swift
-//  CardScan
-//
-//  Created by xaen on 6/17/20.
-//
-
 import UIKit
-
 
 struct OcrDDUtils {
     static let offsetQuickRead:Float = 2.0

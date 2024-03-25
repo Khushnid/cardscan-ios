@@ -1,16 +1,5 @@
 import Foundation
 
-/**
- Organize the boxes to find possible numbers.
- 
- After running detection, the post processing algorithm will try to find
- sequences of boxes that are plausible card numbers. The basic techniques
- that it uses are non-maximum suppression and depth first search on box
- sequences to find likely numbers. There are also a number of heuristics
- for filtering out unlikely sequences.
- */
-
-
 struct PostDetectionAlgorithm {
     let kNumberWordCount = 4
     let kAmexWordCount = 5

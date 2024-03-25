@@ -1,12 +1,4 @@
-//
-//  PredictionAPI.swift
-//  CardScan
-//
-//  Created by Zain on 8/6/19.
-//
-
 import Foundation
-
 
 struct Result{
     var pickedBoxProbs: [Float]
@@ -52,7 +44,7 @@ struct PredictionAPI{
             }
             
             indicies = NMS.hardNMS(subsetBoxes: subsetBoxes, probs: probs, iouThreshold: iouThreshold, topK: topK, candidateSize: candidateSize)
-           
+            
             for idx in indicies{
                 pickedBoxProbs.append(probs[idx])
                 pickedBoxes.append(subsetBoxes[idx])

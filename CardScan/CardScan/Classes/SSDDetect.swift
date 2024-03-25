@@ -1,23 +1,7 @@
-//
-//  SsdDetect.swift
-//  CardScan
-//
-//  Created by Zain on 8/5/19.
-//
-
 import Foundation
 import os.log
 import UIKit
-
 import CoreML
-
-/**
- Documentation on how SSD works
- 
- */
-
-
-@available(iOS 11.2, *)
 
 public struct SsdDetect {
     static var ssdModel: SSD? = nil

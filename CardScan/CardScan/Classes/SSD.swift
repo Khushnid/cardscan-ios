@@ -1,13 +1,5 @@
-//
-// SSD.swift
-//
-// This file was automatically generated and should not be edited.
-//
-
 import CoreML
 
-
-/// Model Prediction Input Type
 @available(macOS 10.13.2, iOS 11.2, tvOS 11.2, watchOS 4.2, *)
 class SSDInput : MLFeatureProvider {
 

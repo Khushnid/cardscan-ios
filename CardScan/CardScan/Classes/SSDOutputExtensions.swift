@@ -1,18 +1,7 @@
-//
-//  SSDOutputExtensions.swift
-//  CardScan
-//
-//  Created by Zain on 8/5/19.
-//
-
 import Foundation
 import Accelerate
 
-@available(iOS 11.2, *)
-
-extension SSDOutput{
-
-
+extension SSDOutput {
     func getScores() -> [[Float]] {
         let pointer = UnsafeMutablePointer<Float>(OpaquePointer(self.scores.dataPointer))
         let numOfRows = self.scores.shape[3].intValue
@@ -25,7 +14,7 @@ extension SSDOutput{
         }
         return scoresTest
     }
-
+    
     func getBoxes() ->[[Float]]{
         let pointer = UnsafeMutablePointer<Float>(OpaquePointer(self.boxes.dataPointer))
         let numOfRows = self.boxes.shape[3].intValue
@@ -38,7 +27,7 @@ extension SSDOutput{
         }
         return boxesTest
     }
-
+    
     
     func matrixReshape(_ nums: [[Float]], _ r: Int, _ c: Int) -> [[Float]] {
         
@@ -65,8 +54,8 @@ extension SSDOutput{
         return resultArray
     }
     
-
-     func softmax(_ x: [Float]) -> [Float] {
+    
+    func softmax(_ x: [Float]) -> [Float] {
         // subtract the max from each value
         // to prevent exp blowup
         // raise all elements to power e
@@ -91,7 +80,7 @@ extension SSDOutput{
     }
     
     func fasterSoftmax2D(_ scores: [[Float]]) -> [[Float]]{
-       
+        
         let normalizedScores = scores.map {softmax($0)}
         return normalizedScores
     }
@@ -121,11 +110,10 @@ extension SSDOutput{
         var cornerFormBoxes = regularBoxes
         for i in 0..<regularBoxes.count{
             for j in 0..<2{
-            cornerFormBoxes[i][j] = regularBoxes[i][j] - regularBoxes[i][j+2]/2
-            cornerFormBoxes[i][j+2] = regularBoxes[i][j] + regularBoxes[i][j+2]/2
+                cornerFormBoxes[i][j] = regularBoxes[i][j] - regularBoxes[i][j+2]/2
+                cornerFormBoxes[i][j+2] = regularBoxes[i][j] + regularBoxes[i][j+2]/2
             }
         }
         return cornerFormBoxes
     }
-    
 }

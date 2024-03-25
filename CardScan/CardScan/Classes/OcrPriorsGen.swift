@@ -1,12 +1,3 @@
-//
-//  OcrPriorsGen.swift
-//  CardScan
-//
-//  Created by xaen on 3/20/20.
-//
-
-///* Don't need this, since this is happening on the GPU now ...............
- 
 import CoreGraphics
 import Foundation
 

@@ -26,7 +26,7 @@
 		3B20EE002586550600CBF05E /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC22586550600CBF05E /* PreviewView.swift */; };
 		3B20EE012586550600CBF05E /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC32586550600CBF05E /* Expiry.swift */; };
 		3B20EE022586550600CBF05E /* DetectedAllOcrBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC42586550600CBF05E /* DetectedAllOcrBoxes.swift */; };
-		3B20EE032586550600CBF05E /* SsdDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC52586550600CBF05E /* SsdDetect.swift */; };
+		3B20EE032586550600CBF05E /* SSDDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC52586550600CBF05E /* SSDDetect.swift */; };
 		3B20EE042586550600CBF05E /* CSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC62586550600CBF05E /* CSBundle.swift */; };
 		3B20EE052586550600CBF05E /* NMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC72586550600CBF05E /* NMS.swift */; };
 		3B20EE062586550600CBF05E /* DetectedAllBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDC82586550600CBF05E /* DetectedAllBoxes.swift */; };
@@ -36,7 +36,7 @@
 		3B20EE0B2586550600CBF05E /* SSDOcrDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDCD2586550600CBF05E /* SSDOcrDetect.swift */; };
 		3B20EE0C2586550600CBF05E /* OcrDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDCE2586550600CBF05E /* OcrDD.swift */; };
 		3B20EE0D2586550600CBF05E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDCF2586550600CBF05E /* AppState.swift */; };
-		3B20EE0E2586550600CBF05E /* UIImage+pixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDD02586550600CBF05E /* UIImage+pixelBuffer.swift */; };
+		3B20EE0E2586550600CBF05E /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDD02586550600CBF05E /* UIImage+PixelBuffer.swift */; };
 		3B20EE0F2586550600CBF05E /* CreditCardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDD12586550600CBF05E /* CreditCardUtils.swift */; };
 		3B20EE102586550600CBF05E /* ScanConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDD22586550600CBF05E /* ScanConfiguration.swift */; };
 		3B20EE112586550600CBF05E /* DetectedSSDBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20EDD32586550600CBF05E /* DetectedSSDBox.swift */; };
@@ -110,7 +110,7 @@
 		3B20EDC22586550600CBF05E /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		3B20EDC32586550600CBF05E /* Expiry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expiry.swift; sourceTree = "<group>"; };
 		3B20EDC42586550600CBF05E /* DetectedAllOcrBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedAllOcrBoxes.swift; sourceTree = "<group>"; };
-		3B20EDC52586550600CBF05E /* SsdDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SsdDetect.swift; sourceTree = "<group>"; };
+		3B20EDC52586550600CBF05E /* SSDDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDDetect.swift; sourceTree = "<group>"; };
 		3B20EDC62586550600CBF05E /* CSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSBundle.swift; sourceTree = "<group>"; };
 		3B20EDC72586550600CBF05E /* NMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMS.swift; sourceTree = "<group>"; };
 		3B20EDC82586550600CBF05E /* DetectedAllBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedAllBoxes.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		3B20EDCD2586550600CBF05E /* SSDOcrDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDOcrDetect.swift; sourceTree = "<group>"; };
 		3B20EDCE2586550600CBF05E /* OcrDD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OcrDD.swift; sourceTree = "<group>"; };
 		3B20EDCF2586550600CBF05E /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		3B20EDD02586550600CBF05E /* UIImage+pixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+pixelBuffer.swift"; sourceTree = "<group>"; };
+		3B20EDD02586550600CBF05E /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
 		3B20EDD12586550600CBF05E /* CreditCardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardUtils.swift; sourceTree = "<group>"; };
 		3B20EDD22586550600CBF05E /* ScanConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanConfiguration.swift; sourceTree = "<group>"; };
 		3B20EDD32586550600CBF05E /* DetectedSSDBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedSSDBox.swift; sourceTree = "<group>"; };
@@ -226,7 +226,10 @@
 		3B20EDB22586550600CBF05E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B675E63E2BB16A5C00F3D03E /* Trained Models */,
 				3B20EDEB2586550600CBF05E /* AppleOcr */,
+				3B20EDB52586550600CBF05E /* CreditCardOcr */,
+				3B20EDE52586550600CBF05E /* Extensions */,
 				F3EEF42F262E5E470022FBAC /* Utils */,
 				3B20EDB42586550600CBF05E /* ActiveStateComputation.swift */,
 				3B20EDCA2586550600CBF05E /* API.swift */,
@@ -236,7 +239,7 @@
 				3B20EDD92586550600CBF05E /* CardType.swift */,
 				3B20EDD42586550600CBF05E /* CGRectExtension.swift */,
 				3B20EDDA2586550600CBF05E /* CornerView.swift */,
-				3B20EDB52586550600CBF05E /* CreditCardOcr */,
+				3B20EDB32586550600CBF05E /* VideoFeed.swift */,
 				3B20EDD12586550600CBF05E /* CreditCardUtils.swift */,
 				3B20EDC62586550600CBF05E /* CSBundle.swift */,
 				3B20EDC82586550600CBF05E /* DetectedAllBoxes.swift */,
@@ -245,7 +248,6 @@
 				3B20EDD32586550600CBF05E /* DetectedSSDBox.swift */,
 				3B20EDE42586550600CBF05E /* DetectedSSDOcrBox.swift */,
 				3B20EDC32586550600CBF05E /* Expiry.swift */,
-				3B20EDE52586550600CBF05E /* Extensions */,
 				3B20EDE82586550600CBF05E /* InterfaceOrientation.swift */,
 				3B20EDF12586550600CBF05E /* ModelConfigResponse.swift */,
 				3B20EDC72586550600CBF05E /* NMS.swift */,
@@ -266,14 +268,11 @@
 				3B20EDD72586550600CBF05E /* SimpleScanViewController.swift */,
 				3B20EDDC2586550600CBF05E /* SoftNMS.swift */,
 				3B20EE53258658F900CBF05E /* SSD.swift */,
-				3B20EDC52586550600CBF05E /* SsdDetect.swift */,
-				3B20EDEF2586550600CBF05E /* SSDOcr.mlmodel */,
+				3B20EDC52586550600CBF05E /* SSDDetect.swift */,
 				3B20EDCD2586550600CBF05E /* SSDOcrDetect.swift */,
 				3B20EDE02586550600CBF05E /* SSDOcrOutputExtensions.swift */,
 				3B20EDE12586550600CBF05E /* SSDOutputExtensions.swift */,
 				3B20EDD52586550600CBF05E /* Torch.swift */,
-				3B20EDD02586550600CBF05E /* UIImage+pixelBuffer.swift */,
-				3B20EDB32586550600CBF05E /* VideoFeed.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -299,6 +298,7 @@
 		3B20EDE52586550600CBF05E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3B20EDD02586550600CBF05E /* UIImage+PixelBuffer.swift */,
 				3B20EDE62586550600CBF05E /* CreditCardOcrPrediction+expiry.swift */,
 				3B20EDE72586550600CBF05E /* Image+utils.swift */,
 				3B15C14E259C326A005A394A /* String+localization.swift */,
@@ -333,6 +333,14 @@
 				3B20EE44258655DC00CBF05E /* card_types.txt */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		B675E63E2BB16A5C00F3D03E /* Trained Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B20EDEF2586550600CBF05E /* SSDOcr.mlmodel */,
+			);
+			path = "Trained Models";
 			sourceTree = "<group>";
 		};
 		F3EEF42F262E5E470022FBAC /* Utils */ = {
@@ -481,7 +489,7 @@
 				3B20EDF22586550600CBF05E /* VideoFeed.swift in Sources */,
 				3B20EE0D2586550600CBF05E /* AppState.swift in Sources */,
 				3B20EE1B2586550600CBF05E /* PredictionUtilOcr.swift in Sources */,
-				3B20EE0E2586550600CBF05E /* UIImage+pixelBuffer.swift in Sources */,
+				3B20EE0E2586550600CBF05E /* UIImage+PixelBuffer.swift in Sources */,
 				3B20EE222586550600CBF05E /* DetectedSSDOcrBox.swift in Sources */,
 				3B20EE1E2586550600CBF05E /* SSDOcrOutputExtensions.swift in Sources */,
 				3B20EE1C2586550600CBF05E /* PredictionResult.swift in Sources */,
@@ -491,7 +499,7 @@
 				3B20EE052586550600CBF05E /* NMS.swift in Sources */,
 				3B20EE142586550600CBF05E /* DetectedBox.swift in Sources */,
 				3B20EDF52586550600CBF05E /* CreditCardOcrImplementation.swift in Sources */,
-				3B20EE032586550600CBF05E /* SsdDetect.swift in Sources */,
+				3B20EE032586550600CBF05E /* SSDDetect.swift in Sources */,
 				3B20EDF72586550600CBF05E /* MachineLearningResult.swift in Sources */,
 				3B20EDF92586550600CBF05E /* SSDCreditCardOcr.swift in Sources */,
 				3B20EE54258658F900CBF05E /* SSD.swift in Sources */,

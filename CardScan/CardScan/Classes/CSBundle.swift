@@ -1,10 +1,3 @@
-//
-//  CardScan.swift
-//  CardScan
-//
-//  Created by Jaime Park on 1/29/20.
-//
-
 import Foundation
 
 

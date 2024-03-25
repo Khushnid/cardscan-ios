@@ -1,19 +1,6 @@
-//
-//  SSDOcrDetect.swift
-//  CardScan
-//
-//  Created by xaen on 3/21/20.
-//
-
 import CoreGraphics
 import Foundation
 import UIKit
-
-/** Documentation for SSD OCR
- 
- */
-
-@available(iOS 11.2, *)
 
 struct SSDOcrDetect {
     var ssdOcrModel: SSDOcr? = nil
@@ -44,7 +31,7 @@ struct SSDOcrDetect {
                                            height: ssdOcrImageHeight))
         UIColor.white.setFill()
         UIRectFill(CGRect(x: 0, y: 0, width: ssdOcrImageWidth,
-                                      height: ssdOcrImageHeight))
+                          height: ssdOcrImageHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -64,7 +51,7 @@ struct SSDOcrDetect {
             SSDOcrDetect.priors = OcrPriorsGen.combinePriors()
         }
         guard let ssdOcrUrl  = CSBundle.compiledModel(forResource: SSDOcrDetect.ssdOcrResource, withExtension: SSDOcrDetect.ssdOcrExtension) else {
-
+            
             print("Could not find URL for ssd ocr")
             return
         }
@@ -86,7 +73,7 @@ struct SSDOcrDetect {
     mutating func detectOcrObjects(prediction: SSDOcrOutput, image: UIImage) -> String? {
         var DetectedOcrBoxes = DetectedAllOcrBoxes()
         
-
+        
         var (scores, boxes, filterArray) = prediction.getScores(filterThreshold: filterThreshold)
         let regularBoxes = prediction.convertLocationsToBoxes(
             locations: boxes,
@@ -115,7 +102,7 @@ struct SSDOcrDetect {
             candidateSize: candidateSize,
             topK: topK
         )
-    
+        
         for idx in 0..<result.pickedBoxes.count {
             DetectedOcrBoxes.allBoxes.append(
                 DetectedSSDOcrBox(
@@ -146,7 +133,7 @@ struct SSDOcrDetect {
         
         
     }
-
+    
     public mutating func predict(image: UIImage) -> String? {
         
         SSDOcrDetect.initializeModels()
@@ -155,7 +142,7 @@ struct SSDOcrDetect {
         else {
             print("Couldn't convert to pixel buffer")
             return nil
-                                                    
+            
         }
         
         guard let ocrDetectModel = ssdOcrModel else {

@@ -1,12 +1,4 @@
-//
-//  BlurView.swift
-//  CardScan
-//
-//  Created by Jaime Park on 8/15/19.
-//
-
 import UIKit
-
 
 public class BlurView: UIView {
     public required init?(coder aDecoder: NSCoder) {

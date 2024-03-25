@@ -1,12 +1,4 @@
-//
-//  CardNetwork.swift
-//  CardScan
-//
-//  Created by Jaime Park on 1/31/20.
-//
-
 import Foundation
-
 
 @objc public enum CardNetwork: Int {
     case VISA

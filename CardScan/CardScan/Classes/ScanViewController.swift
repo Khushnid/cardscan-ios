@@ -1,18 +1,5 @@
-//
-//  ScanCardViewController.swift
-//  ScanCardFramework
-//
-//  Created by Sam King on 10/11/18.
-//  Copyright © 2018 Sam King. All rights reserved.
-//
 import AVKit
 import UIKit
-
-#if canImport(Stripe)
-    import Stripe
-#endif
-
-@available(iOS 11.2, *)
 
 @objc public protocol ScanDelegate {
     @objc func userDidCancel(_ scanViewController: ScanViewController)
@@ -21,7 +8,6 @@ import UIKit
     @objc func userDidSkip(_ scanViewController: ScanViewController)
 }
 
-@available(iOS 11.2, *)
 @objc public protocol ScanStringsDataSource {
     @objc func scanCard() -> String
     @objc func positionCard() -> String
@@ -29,7 +15,6 @@ import UIKit
     @objc func skipButton() -> String
 }
 
-@available(iOS 11.2, *)
 @objc public protocol CaptureOutputDelegate {
     func capture(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
 }
@@ -42,7 +27,6 @@ import UIKit
 // If you prefer to just set the main strings on the ScanViewController
 // the ScanStringsDataSource protocol is stable and won't change, but
 // might be incomplete.
-@available(iOS 11.2, *)
 @objc public protocol FullScanStringsDataSource: ScanStringsDataSource {
     @objc func denyPermissionTitle() -> String
     @objc func denyPermissionMessage() -> String
@@ -78,7 +62,7 @@ import UIKit
         return "\(month)/\(year)"
     }
     
-    #if canImport(Stripe)
+#if canImport(Stripe)
     @objc public func cardParams() -> STPCardParams {
         let cardParam = STPCardParams()
         cardParam.number = self.number
@@ -89,17 +73,16 @@ import UIKit
         
         return cardParam
     }
-    #endif
+#endif
 }
 
-@available(iOS 11.2, *)
 @objc public class ScanViewController: ScanBaseViewController {
     
     public weak var scanDelegate: ScanDelegate?
     public weak var captureOutputDelegate: CaptureOutputDelegate?
     @objc public weak var stringDataSource: ScanStringsDataSource?
     @objc public var allowSkip = false
-    public var torchLevel: Float? 
+    public var torchLevel: Float?
     public var scanQrCode = false
     public var navigationBarIsHidden = true
     @objc public var hideBackButtonImage = false
@@ -159,7 +142,7 @@ import UIKit
         let bundle = CSBundle.bundle()!
         let storyboard = UIStoryboard(name: "CardScan", bundle: bundle)
         let viewController = storyboard.instantiateViewController(withIdentifier: "scanCardViewController") as! ScanViewController
-            viewController.scanDelegate = delegate
+        viewController.scanDelegate = delegate
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             // For the iPad you can use the full screen style but you have to select "requires full screen" in
@@ -193,7 +176,7 @@ import UIKit
         self.calledDelegate = true
         self.scanDelegate?.userDidSkip(self)
     }
-
+    
     @objc public func cancel(callDelegate: Bool) {
         if !self.calledDelegate {
             self.cancelScan()
@@ -278,7 +261,7 @@ import UIKit
                 
             case .destructive:
                 print("destructive")
-
+                
             @unknown default:
                 assertionFailure("UIAlertAction case not handled")
             }}))
@@ -357,7 +340,7 @@ import UIKit
         let notification = UINotificationFeedbackGenerator()
         notification.prepare()
         notification.notificationOccurred(.success)
-                
+        
         self.calledDelegate = true
         let card = CreditCard(number: number)
         card.expiryMonth = expiryMonth
@@ -365,7 +348,7 @@ import UIKit
         card.image = scannedImage
         // This is a hack to work around having to change our public interface
         card.name = predictedName
-
+        
         self.scanDelegate?.userDidScanCard(self, creditCard: card)
     }
     
@@ -376,33 +359,32 @@ import UIKit
     
 }
 
-@available(iOS 11.2, *)
 extension ScanViewController {
-     @objc func viewOnWillResignActive() {
+    @objc func viewOnWillResignActive() {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         self.backgroundBlurEffectView = UIVisualEffectView(effect: blurEffect)
-
+        
         guard let backgroundBlurEffectView = self.backgroundBlurEffectView else {
             return
         }
-
+        
         backgroundBlurEffectView.frame = self.view.bounds
         backgroundBlurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(backgroundBlurEffectView)
-     }
+    }
     
-     @objc func viewOnDidBecomeActive() {
+    @objc func viewOnDidBecomeActive() {
         if let backgroundBlurEffectView = self.backgroundBlurEffectView {
             backgroundBlurEffectView.removeFromSuperview()
         }
         cardNumberLabel.isHidden = true
         expiryLabel.isHidden = true
-     }
-     
-     func addBackgroundObservers() {
-         NotificationCenter.default.addObserver(self, selector: #selector(viewOnWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
-         NotificationCenter.default.addObserver(self, selector: #selector(viewOnDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-     }
+    }
+    
+    func addBackgroundObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(viewOnWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(viewOnDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
 }
 
 // https://stackoverflow.com/a/53143736/947883
@@ -414,6 +396,6 @@ extension UIView {
         UIView.animate(withDuration: duration!,
                        animations: { self.alpha = 1 },
                        completion: { (value: Bool) in
-                        if let complete = onCompletion { complete() }})
+            if let complete = onCompletion { complete() }})
     }
 }

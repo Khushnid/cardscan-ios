@@ -1,9 +1,3 @@
-//
-//  PriorsGen.swift
-//  CardScan
-//
-//  Created by Zain on 8/6/19.
-//
 import CoreGraphics
 import Foundation
 

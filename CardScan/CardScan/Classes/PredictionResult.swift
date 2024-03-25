@@ -1,9 +1,3 @@
-//
-//  PredictionResult.swift
-//  CardScan
-//
-//  Created by Sam King on 11/16/18.
-//
 import CoreGraphics
 import Foundation
 import UIKit
@@ -48,12 +42,12 @@ struct PredictionResult {
     }
     
     func extractImagePng(from image: CGImage, for box: CGRect) -> String? {
-        #if swift(>=4.2)
-            let uiImage = image.cropping(to: box).map { UIImage(cgImage: $0) }
-            return uiImage.flatMap { $0.pngData()?.base64EncodedString() }
-        #else
-            return nil
-        #endif
+#if swift(>=4.2)
+        let uiImage = image.cropping(to: box).map { UIImage(cgImage: $0) }
+        return uiImage.flatMap { $0.pngData()?.base64EncodedString() }
+#else
+        return nil
+#endif
     }
     
     func resizeImage(image: UIImage, to size: CGSize) -> UIImage? {

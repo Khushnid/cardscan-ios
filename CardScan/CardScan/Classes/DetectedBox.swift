@@ -1,13 +1,6 @@
 import CoreGraphics
 import Foundation
 
-/**
- Data structure to keep track of each box that the model detects.
- 
- Note: the rect member is in the image's coordinate system.
- */
-
-
 struct DetectedBox {
     let rect: CGRect
     let row: Int

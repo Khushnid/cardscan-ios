@@ -1,9 +1,3 @@
-//
-//  DetectedSSDBox.swift
-//  CardScan
-//
-//  Created by Zain on 8/7/19.
-//
 import CoreGraphics
 import Foundation
 

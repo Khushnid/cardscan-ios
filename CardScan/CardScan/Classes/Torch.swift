@@ -1,12 +1,12 @@
 import Foundation
 import AVFoundation
 
-
 struct Torch {
     enum State {
         case off
         case on
     }
+    
     let device: AVCaptureDevice?
     var state: State
     var lastStateChange: Date
@@ -38,5 +38,4 @@ struct Torch {
             print("error setting torch level")
         }
     }
-    
 }

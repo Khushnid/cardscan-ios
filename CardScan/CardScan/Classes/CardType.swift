@@ -1,13 +1,5 @@
-//
-//  CardType.swift
-//  CardScan
-//
-//  Created by Adam Wushensky on 8/27/20.
-//
-
 import Foundation
  
-
 @objc public enum CardType: Int {
     case CREDIT
     case DEBIT

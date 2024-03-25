@@ -1,9 +1,3 @@
-//
-//  DetectedAllOcrBoxes.swift
-//  CardScan
-//
-//  Created by xaen on 3/22/20.
-//
 import CoreGraphics
 import Foundation
 

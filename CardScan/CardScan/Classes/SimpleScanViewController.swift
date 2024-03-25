@@ -1,79 +1,18 @@
 import UIKit
 
-/*
- This class is all programmatic UI with a small bit of logic to handle
- the events that ScanBaseViewController expects subclasses to implement.
- Our goal is to have a fully featured Card Scan implementation with a
- minimal UI that people can customize fully. You can use this directly or
- you can subclass and customize it. If you'd like to use an off-the-shelf
- design as well, we suggest using the `ScanViewController`, which uses
- mature and well tested UI design patterns.
- 
- The default UI looks something like this, with most of the constraints
- shown:
- 
- ------------------------------------
- |   |                          |   |
- |-Cancel                     Torch-|
- |                                  |
- |                                  |
- |                                  |
- |                                  |
- |                                  |
- |------------Scan Card-------------|
- |                |                 |
- |  ------------------------------  |
- | |                              | |
- | |                              | |
- | |                              | |
- | |--4242    4242   4242   4242--| |
- | ||           05/23             | |
- | ||-Sam King                    | |
- | |     |                        | |
- |  ------------------------------  |
- | |              |               | |
- | |              |               | |
- | |   Enable camera permissions  | |
- | |              |               | |
- | |              |               | |
- | |---To scan your card you...---| |
- |                                  |
- |                                  |
- |                                  |
- ------------------------------------
- 
- For the UI we separate out the key components into three parts:
- - Five `*String` variables that we use to set the copy
- - For each component or group of components we have:
-   - `setup*Ui` functions for setting the visual look and feel
-   - `setup*Constraints for setting up autolayout
- - We have top level `setupUiComponents` and `setupConstraints` functions that do
-   a small bit of setup and call the appropriate setup functions for each
-   components
- 
- And to customize the UI you can either override any of these functions or you
- can access components directly to adjust. Also, you're welcome to copy and paste
- this code and customize it to fit your needs -- we're fine with whatever makes
- the most sense for your app.
- */
-
-@available(iOS 11.2, *)
-
 @objc public protocol SimpleScanDelegate {
     @objc func userDidCancelSimple(_ scanViewController: SimpleScanViewController)
     @objc func userDidScanCardSimple(_ scanViewController: SimpleScanViewController, creditCard: CreditCard)
 }
 
-@available(iOS 11.2, *)
-
 @objc open class SimpleScanViewController: ScanBaseViewController {
-
+    
     // used by ScanBase
     public var previewView: PreviewView = PreviewView()
     public var blurView: BlurView = BlurView()
     public var roiView: UIView = UIView()
     public var cornerView: CornerView?
-
+    
     // our UI components
     public var descriptionText = UILabel()
     
@@ -116,7 +55,7 @@ import UIKit
     
     @objc public static func createViewController() -> SimpleScanViewController {
         let vc = SimpleScanViewController()
-
+        
         if UIDevice.current.userInterfaceIdiom == .pad {
             // For the iPad you can use the full screen style but you have to select "requires full screen" in
             // the Info.plist to lock it in portrait mode. For iPads, we recommend using a formSheet, which
@@ -125,7 +64,7 @@ import UIKit
         } else {
             vc.modalPresentationStyle = .fullScreen
         }
- 
+        
         return vc
     }
     
@@ -148,15 +87,14 @@ import UIKit
      Removing targets manually since we are allowing custom buttons which retains button reference ->
      ARC doesn't automatically decrement its reference count ->
      Targets gets added on every setUpUi call.
-
+     
      Figure out a better way of allow custom buttons programmatically instead of whole UI buttons.
-    */
+     */
     open override func viewDidDisappear(_ animated: Bool) {
         closeButton.removeTarget(self, action: #selector(cancelButtonPress), for: .touchUpInside)
         torchButton.removeTarget(self, action: #selector(torchButtonPress), for: .touchUpInside)
     }
     
-    @available(iOS 13.0, *)
     func setUpMainLoop(errorCorrectionDuration: Double) {
         if scanPerformancePriority == .accurate {
             let mainLoop = self.mainLoop as? OcrMainLoop
@@ -168,7 +106,7 @@ import UIKit
     open func setupUiComponents() {
         view.backgroundColor = .white
         regionOfInterestCornerRadius = 15.0
-
+        
         let children: [UIView] = [previewView, blurView, roiView, descriptionText, closeButton, torchButton, numberText, expiryText, nameText, expiryLayoutView, enableCameraPermissionsButton, enableCameraPermissionsText]
         for child in children {
             self.view.addSubview(child)
@@ -367,25 +305,25 @@ import UIKit
         guard let number = prediction.number else {
             return
         }
-                   
-       numberText.text = CreditCardUtils.format(number: number)
-       if numberText.isHidden {
-           numberText.fadeIn()
-       }
-       
-       if let expiry = prediction.expiryForDisplay {
-           expiryText.text = expiry
-           if expiryText.isHidden {
-               expiryText.fadeIn()
-           }
-       }
-       
-       if let name = prediction.name {
-           nameText.text = name
-           if nameText.isHidden {
-               nameText.fadeIn()
-           }
-       }
+        
+        numberText.text = CreditCardUtils.format(number: number)
+        if numberText.isHidden {
+            numberText.fadeIn()
+        }
+        
+        if let expiry = prediction.expiryForDisplay {
+            expiryText.text = expiry
+            if expiryText.isHidden {
+                expiryText.fadeIn()
+            }
+        }
+        
+        if let name = prediction.name {
+            nameText.text = name
+            if nameText.isHidden {
+                nameText.fadeIn()
+            }
+        }
     }
     
     override open func prediction(prediction: CreditCardOcrPrediction, squareCardImage: CGImage, fullCardImage: CGImage, state: MainLoopState) {

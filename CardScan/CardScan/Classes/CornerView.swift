@@ -1,6 +1,5 @@
 import UIKit
 
-
 public class CornerView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

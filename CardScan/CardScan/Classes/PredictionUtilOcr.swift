@@ -1,10 +1,3 @@
-//
-//  PredictionUtilOcr.swift
-//  CardScan
-//
-//  Created by xaen on 6/4/20.
-//
-
 import Foundation
 
 
