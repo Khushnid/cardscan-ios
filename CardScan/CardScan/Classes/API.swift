@@ -1,11 +1,3 @@
-//
-//  API.swift
-//  Lab Fees
-//
-//  Created by Sam King on 11/11/18.
-//  Copyright © 2018 Sam King. All rights reserved.
-//
-
 import Foundation
 import CoreML
 

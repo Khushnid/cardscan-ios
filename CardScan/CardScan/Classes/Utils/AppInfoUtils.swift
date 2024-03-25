@@ -1,10 +1,3 @@
-//
-//  AppInfoUtils.swift
-//  CardScan
-//
-//  Created by Jaime Park on 4/15/21.
-//
-
 import Foundation
 
 struct AppInfoUtils {

@@ -1,11 +1,9 @@
 import AVKit
 import VideoToolbox
 
-
 protocol AfterPermissions {
     func permissionDidComplete(granted: Bool, showedPrompt: Bool)
 }
-
 
 class VideoFeed {
     private enum SessionSetupResult {

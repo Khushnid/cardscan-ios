@@ -21,8 +21,6 @@
 		3B7B809D2587D375007DB4D9 /* CardScan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7B809B2587D375007DB4D9 /* CardScan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B7B80AA2587D481007DB4D9 /* CameraPermissionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B80A72587D481007DB4D9 /* CameraPermissionHandler.swift */; };
 		3B7B80AC2587D481007DB4D9 /* DenyCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7B80A92587D481007DB4D9 /* DenyCameraUITests.swift */; };
-		B675E63C2BB1416400F3D03E /* FindFour.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B675E63A2BB1416400F3D03E /* FindFour.mlmodel */; };
-		B675E63D2BB1416400F3D03E /* FourRecognize.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B675E63B2BB1416400F3D03E /* FourRecognize.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +65,6 @@
 		3B7B809B2587D375007DB4D9 /* CardScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CardScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7B80A72587D481007DB4D9 /* CameraPermissionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionHandler.swift; sourceTree = "<group>"; };
 		3B7B80A92587D481007DB4D9 /* DenyCameraUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenyCameraUITests.swift; sourceTree = "<group>"; };
-		B675E63A2BB1416400F3D03E /* FindFour.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FindFour.mlmodel; path = CardScanSystemTest/FindFour.mlmodel; sourceTree = SOURCE_ROOT; };
-		B675E63B2BB1416400F3D03E /* FourRecognize.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FourRecognize.mlmodel; path = CardScanSystemTest/FourRecognize.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +118,6 @@
 				3B46FC1C2587DB5000849658 /* Resources */,
 				3B7B80912587D34C007DB4D9 /* CameraPermissionViewController.swift */,
 				3B7B808F2587D34C007DB4D9 /* MyAppsApi.swift */,
-				B675E63A2BB1416400F3D03E /* FindFour.mlmodel */,
-				B675E63B2BB1416400F3D03E /* FourRecognize.mlmodel */,
 				3B7B80902587D34C007DB4D9 /* ResultViewController.swift */,
 				3B7B80922587D34C007DB4D9 /* TorchCheckViewController.swift */,
 				3B7B804F2587D233007DB4D9 /* AppDelegate.swift */,
@@ -259,11 +253,9 @@
 				3B7B80942587D34C007DB4D9 /* ResultViewController.swift in Sources */,
 				3B7B80542587D233007DB4D9 /* ViewController.swift in Sources */,
 				3B7B80952587D34C007DB4D9 /* CameraPermissionViewController.swift in Sources */,
-				B675E63C2BB1416400F3D03E /* FindFour.mlmodel in Sources */,
 				3B7B80502587D233007DB4D9 /* AppDelegate.swift in Sources */,
 				3B7B80962587D34C007DB4D9 /* TorchCheckViewController.swift in Sources */,
 				3B7B80932587D34C007DB4D9 /* MyAppsApi.swift in Sources */,
-				B675E63D2BB1416400F3D03E /* FourRecognize.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72G8QYM7HH;
 				INFOPLIST_FILE = CardScanSystemTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72G8QYM7HH;
 				INFOPLIST_FILE = CardScanSystemTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
