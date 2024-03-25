@@ -1,7 +1,6 @@
 import VideoToolbox
 import UIKit
 
-
 extension UIImage {
     static func grayImage(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)

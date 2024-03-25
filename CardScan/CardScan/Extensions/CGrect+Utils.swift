@@ -1,12 +1,4 @@
-//
-//  CGrect+utils.swift
-//  CardScan
-//
-//  Created by Jaime Park on 6/11/21.
-//
-
 import CoreGraphics
-
 
 extension CGRect {
     func centerY() -> CGFloat {

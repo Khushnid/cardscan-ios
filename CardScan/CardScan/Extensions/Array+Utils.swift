@@ -1,12 +1,4 @@
-//
-//  Array+utils.swift
-//  CardScan
-//
-//  Created by Jaime Park on 6/11/21.
-//
-
 import Foundation
-
 
 extension Array {
     func chunked(into size: Int) -> [[Element]] {

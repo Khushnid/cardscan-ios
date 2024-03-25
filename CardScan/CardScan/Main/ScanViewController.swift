@@ -61,23 +61,9 @@ import UIKit
         
         return "\(month)/\(year)"
     }
-    
-#if canImport(Stripe)
-    @objc public func cardParams() -> STPCardParams {
-        let cardParam = STPCardParams()
-        cardParam.number = self.number
-        if let expiryMonth = self.expiryMonth, let expiryYear = self.expiryYear {
-            cardParam.expYear = UInt(expiryYear) ?? 0
-            cardParam.expMonth = UInt(expiryMonth) ?? 0
-        }
-        
-        return cardParam
-    }
-#endif
 }
 
 @objc public class ScanViewController: ScanBaseViewController {
-    
     public weak var scanDelegate: ScanDelegate?
     public weak var captureOutputDelegate: CaptureOutputDelegate?
     @objc public weak var stringDataSource: ScanStringsDataSource?
